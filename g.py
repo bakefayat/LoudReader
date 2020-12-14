@@ -12,7 +12,7 @@ def music_length(path):
     songl = song.info.length
     return songl
 
-def play_eleven_to_nineteen(num,i):
+def play_eleven_to_nineteen(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
         fpath = path + 'd11.mp3'
@@ -50,9 +50,8 @@ def play_eleven_to_nineteen(num,i):
         fpath = path + 'd19.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
-    return i+1
 
-def play_dah(num,i):
+def play_dah(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
         fpath = path + 'd10.mp3'
@@ -90,10 +89,9 @@ def play_dah(num,i):
         fpath = path + 'd90.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
-    return i+1
 
 #start from here
-def play_num(num,i):
+def play_num(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
         fpath = path + 'd1.mp3'
@@ -131,21 +129,19 @@ def play_num(num,i):
         fpath = path + 'd9.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
-    return i+1
 
-def yekan(num,i):
-    play_num(num,i)
-    return i   
+def yekan(num):
+    play_num(num)
 
-def dahgan(num,yekan,i):
+def dahgan(num,yekan):
     is_eleven = False
     if num == 1 and yekan != 0:
-        play_eleven_to_nineteen(yekan,i)
+        play_eleven_to_nineteen(yekan)
         is_eleven = True
     else:
-        play_dah(num,i)
+        play_dah(num)
     return is_eleven
-def sadgan(num,i):
+def sadgan(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
         fpath = path + 'd100.mp3'
@@ -159,30 +155,29 @@ def sadgan(num,i):
         fpath = path + 'd300.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
-    return i+1
 
-def play_dar(i):
+def play_dar():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
     fpath = path + 'dDar.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
-    return i+1
 
-def play_adad(i):
+
+def play_adad():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
     fpath = path + 'dAdad.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
-    return i+1
+
 
 def play_mil():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     fpath = path + 'dMil.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
-    return i+1
 
-def split_num(number,i):
+
+def split_num(number):
     mmz_index = None
     mmz = 0
     sad = 0
@@ -203,14 +198,14 @@ def split_num(number,i):
     if leng > 2:
         sad = int(number[2])
     if sad:
-        sadgan(sad,i)
+        sadgan(sad)
     if dah:
-        is_wierd = dahgan(dah,yek,i)
+        is_wierd = dahgan(dah,yek)
     if yek and not(is_wierd):
-        yekan(yek,i)
+        yekan(yek)
     if mmz:
         mmz = int(mmz)
-        yekan(mmz,i)
+        yekan(mmz)
         play_mil()
  
 #split_num(123.1,0)
@@ -220,9 +215,8 @@ w = df['طول'].tolist()
 h = df['عرض'].tolist()
 c = df['تعداد'].tolist()
 for k in range(0,len(h)):
-        split_num(w[k],i)
-        play_dar(i)
-        split_num(h[k],i)
-        split_num(c[k],i)
-        play_adad(i)
-print(w)
+        split_num(w[k])
+        play_dar()
+        split_num(h[k])
+        split_num(c[k])
+        play_adad()

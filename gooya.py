@@ -3,7 +3,6 @@ from mutagen.mp3 import MP3
 import time
 mixer.init() 
 mixer.music.set_volume(0.7) 
-while(True):
         path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
         #mixer.music.play()
         mixer.Channel(0).play(mixer.Sound(path + "d1.mp3"))
