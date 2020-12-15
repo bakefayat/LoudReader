@@ -5,7 +5,7 @@ from playsound import playsound as play
 import pandas as pd
 i = 0
 mixer.init()
-mixer.music.set_volume(0.7)
+mixer.music.set_volume(1)
 start = time.time()
 def music_length(path):
     song = MP3(path)
@@ -90,7 +90,6 @@ def play_dah(num):
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
-#start from here
 def play_num(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
@@ -141,6 +140,7 @@ def dahgan(num,yekan):
     else:
         play_dah(num)
     return is_eleven
+
 def sadgan(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
@@ -162,20 +162,17 @@ def play_dar():
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
-
 def play_adad():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
     fpath = path + 'dAdad.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
-
 def play_mil():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     fpath = path + 'dMil.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
-
 
 def split_num(number):
     mmz_index = None
@@ -188,6 +185,7 @@ def split_num(number):
         if number[i] == '.':
             mmz_index = i
             mmz = number[i+1]
+
     number = number[:mmz_index:]
     number = number[::-1]
     is_wierd = False
@@ -203,7 +201,7 @@ def split_num(number):
         is_wierd = dahgan(dah,yek)
     if yek and not(is_wierd):
         yekan(yek)
-    if mmz:
+    if mmz and mmz != '0':
         mmz = int(mmz)
         yekan(mmz)
         play_mil()
