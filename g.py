@@ -3,54 +3,8 @@ from pygame import mixer
 from mutagen.mp3 import MP3
 from playsound import playsound as play
 import pandas as pd
-i = 0
-mixer.init()
-mixer.music.set_volume(1)
-start = time.time()
-def music_length(path):
-    song = MP3(path)
-    songl = song.info.length
-    return songl
 
-def play_eleven_to_nineteen(num):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
-    if num == 1:
-        fpath = path + 'd11.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 2:
-        fpath = path + 'd12.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 3:
-        fpath = path + 'd13.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 4:
-        fpath = path + 'd14.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 5:
-        fpath = path + 'd15.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 6:
-        fpath = path + 'd16.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 7:
-        fpath = path + 'd17.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 8:
-        fpath = path + 'd18.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 9:
-        fpath = path + 'd19.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-
+#TODO: humanize this.
 def play_dah(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
@@ -90,7 +44,71 @@ def play_dah(num):
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
-def play_num(num):
+#play hunderds. 1-2-3.
+# TODO: humanize it.
+def play_sadgan(num):
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
+    if num == 1:
+        fpath = path + 'd100.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 2:
+        fpath = path + 'd200.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 3:
+        fpath = path + 'd300.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+
+#DONE. to play 11-19.
+def play_eleven_to_nineteen(num):
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
+    if num == 1:
+        fpath = path + 'd11.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 2:
+        fpath = path + 'd12.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 3:
+        fpath = path + 'd13.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 4:
+        fpath = path + 'd14.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 5:
+        fpath = path + 'd15.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 6:
+        fpath = path + 'd16.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 7:
+        fpath = path + 'd17.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 8:
+        fpath = path + 'd18.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+    if num == 9:
+        fpath = path + 'd19.mp3'
+        mixer.Channel(i).play(mixer.Sound(fpath))
+        time.sleep(music_length(fpath))
+
+#Done. to hold program as long as sound length.
+def music_length(path):
+    song = MP3(path)
+    songl = song.info.length
+    return songl
+
+#DONE.play digit
+def play_digit(num):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     if num == 1:
         fpath = path + 'd1.mp3'
@@ -129,9 +147,11 @@ def play_num(num):
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
+#DONE. play first digit.
 def yekan(num):
-    play_num(num)
+    play_digit(num)
 
+#DONE.
 def dahgan(num,yekan):
     is_eleven = False
     if num == 1 and yekan != 0:
@@ -141,33 +161,21 @@ def dahgan(num,yekan):
         play_dah(num)
     return is_eleven
 
-def sadgan(num):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
-    if num == 1:
-        fpath = path + 'd100.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 2:
-        fpath = path + 'd200.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-    if num == 3:
-        fpath = path + 'd300.mp3'
-        mixer.Channel(i).play(mixer.Sound(fpath))
-        time.sleep(music_length(fpath))
-
+#DONE. play just 'dar' not anything else.
 def play_dar():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
     fpath = path + 'dDar.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
+#play just 'adad' not anything else.
 def play_adad():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
     fpath = path + 'dAdad.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
+#play milimeter after length or width.
 def play_mil():
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
     fpath = path + 'dMil.mp3'
@@ -196,7 +204,7 @@ def split_num(number):
     if leng > 2:
         sad = int(number[2])
     if sad:
-        sadgan(sad)
+        play_sadgan(sad)
     if dah:
         is_wierd = dahgan(dah,yek)
     if yek and not(is_wierd):
@@ -206,7 +214,10 @@ def split_num(number):
         yekan(mmz)
         play_mil()
  
-#split_num(123.1,0)
+#read from excel file then play that.
+i = 0
+mixer.init()
+mixer.music.set_volume(1)
 pan = pd.read_excel(r'C:\Users\RDaneshjoo\Desktop\master.xlsx')
 df = pd.DataFrame(pan, columns= [ 'طول','عرض','تعداد'])
 w = df['طول'].tolist()
