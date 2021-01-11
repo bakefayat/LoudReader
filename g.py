@@ -38,13 +38,13 @@ def play_dah(num,next = 0):
 
 
 # TODO: humanize it.
-def play_sadgan(num):
+def play_sadgan(num, next = 0):
     if num == 1:
-        play_song(100)
+        play_song(100, next)
     if num == 2:
-        play_song(200)
+        play_song(200, next)
     if num == 3:
-        play_song(300)
+        play_song(300, next)
 
 # DONE
 def play_eleven_to_nineteen(num):
@@ -73,25 +73,25 @@ def music_length(path):
     return songl
 
 #DONE. play first digit.
-def yekan(num):
+def yekan(num, next = 0):
     if num == 1:
-        play_song(1)
+        play_song(1, next)
     if num == 2:
-        play_song(2)
+        play_song(2, next)
     if num == 3:
-        play_song(3)
+        play_song(3, next)
     if num == 4:
-        play_song(4)
+        play_song(4, next)
     if num == 5:
-        play_song(5)
+        play_song(5, next)
     if num == 6:
-        play_song(6)
+        play_song(6, next)
     if num == 7:
-        play_song(7)
+        play_song(7, next)
     if num == 8:
-        play_song(8)
+        play_song(8, next)
     if num == 9:
-        play_song(9)
+        play_song(9, next)
 
 #DONE.
 def dahgan(num,yekan):
@@ -140,7 +140,10 @@ def split_num(number):
     if leng > 2:
         sad = int(number[2])
     if sad:
-        play_sadgan(sad)
+        if yek or dah:
+            play_sadgan(sad,1)
+        else:
+            play_sadgan(sad,0)
     if dah:
         is_wierd = dahgan(dah,yek)
     if yek and not(is_wierd):
@@ -150,7 +153,6 @@ def split_num(number):
         yekan(mmz)
         play_mil()
  
-#read from excel file then play that.
 i = 0
 mixer.init()
 mixer.music.set_volume(1)
@@ -163,5 +165,6 @@ for k in range(0,len(width)):
         split_num(width[k])
         play_dar()
         split_num(length[k])
+        time.sleep(0.3)
         split_num(many[k])
         play_adad()
