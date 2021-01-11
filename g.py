@@ -6,98 +6,98 @@ import pandas as pd
 
 #TODO: humanize this.
 def play_dah(num):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
     if num == 1:
-        fpath = path + 'd10.mp3'
+        fpath = path + '10.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 2:
-        fpath = path + 'd20.mp3'
+        fpath = path + '20.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 3:
-        fpath = path + 'd30.mp3'
+        fpath = path + '30.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 4:
-        fpath = path + 'd40.mp3'
+        fpath = path + '40.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 5:
-        fpath = path + 'd50.mp3'
+        fpath = path + '50.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 6:
-        fpath = path + 'd60.mp3'
+        fpath = path + '60.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 7:
-        fpath = path + 'd70.mp3'
+        fpath = path + '70.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 8:
-        fpath = path + 'd80.mp3'
+        fpath = path + '80.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 9:
-        fpath = path + 'd90.mp3'
+        fpath = path + '90.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
 #play hunderds. 1-2-3.
 # TODO: humanize it.
 def play_sadgan(num):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
     if num == 1:
-        fpath = path + 'd100.mp3'
+        fpath = path + '100.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 2:
-        fpath = path + 'd200.mp3'
+        fpath = path + '200.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 3:
-        fpath = path + 'd300.mp3'
+        fpath = path + '300.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
 #DONE. to play 11-19.
 def play_eleven_to_nineteen(num):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
     if num == 1:
-        fpath = path + 'd11.mp3'
+        fpath = path + '11.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 2:
-        fpath = path + 'd12.mp3'
+        fpath = path + '12.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 3:
-        fpath = path + 'd13.mp3'
+        fpath = path + '13.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 4:
-        fpath = path + 'd14.mp3'
+        fpath = path + '14.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 5:
-        fpath = path + 'd15.mp3'
+        fpath = path + '15.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 6:
-        fpath = path + 'd16.mp3'
+        fpath = path + '16.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 7:
-        fpath = path + 'd17.mp3'
+        fpath = path + '17.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 8:
-        fpath = path + 'd18.mp3'
+        fpath = path + '18.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 9:
-        fpath = path + 'd19.mp3'
+        fpath = path + '19.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
@@ -109,41 +109,41 @@ def music_length(path):
 
 #DONE.play digit
 def play_digit(num):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
     if num == 1:
-        fpath = path + 'd1.mp3'
+        fpath = path + '1.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 2:
-        fpath = path + 'd2.mp3'
+        fpath = path + '2.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 3:
-        fpath = path + 'd3.mp3'
+        fpath = path + '3.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 4:
-        fpath = path + 'd4.mp3'
+        fpath = path + '4.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 5:
-        fpath = path + 'd5.mp3'
+        fpath = path + '5.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 6:
-        fpath = path + 'd6.mp3'
+        fpath = path + '6.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 7:
-        fpath = path + 'd7.mp3'
+        fpath = path + '7.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 8:
-        fpath = path + 'd8.mp3'
+        fpath = path + '8.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
     if num == 9:
-        fpath = path + 'd9.mp3'
+        fpath = path + '9.mp3'
         mixer.Channel(i).play(mixer.Sound(fpath))
         time.sleep(music_length(fpath))
 
@@ -163,22 +163,22 @@ def dahgan(num,yekan):
 
 #DONE. play just 'dar' not anything else.
 def play_dar():
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
-    fpath = path + 'dDar.mp3'
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/'
+    fpath = path + 'dar.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
 #play just 'adad' not anything else.
 def play_adad():
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/'
-    fpath = path + 'dAdad.mp3'
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/'
+    fpath = path + 'adad.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
 #play milimeter after length or width.
 def play_mil():
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/' 
-    fpath = path + 'dMil.mp3'
+    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
+    fpath = path + 'mil.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 
