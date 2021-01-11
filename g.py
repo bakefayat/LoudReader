@@ -4,6 +4,7 @@ from mutagen.mp3 import MP3
 from playsound import playsound as play
 import pandas as pd
 
+#just play sound.
 def play_song(song, next = 0):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
     if (type(song) == int) and next == 1:
@@ -14,8 +15,8 @@ def play_song(song, next = 0):
         fpath = path + song + '.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
-    print(fpath, next)
 
+# play 10-20-30-...
 def play_dah(num,next = 0):
     if num == 1:
         play_song(10, next)
@@ -36,8 +37,7 @@ def play_dah(num,next = 0):
     if num == 9:
         play_song(90, next)
 
-
-# TODO: humanize it.
+#play 100-200-300
 def play_sadgan(num, next = 0):
     if num == 1:
         play_song(100, next)
@@ -46,7 +46,7 @@ def play_sadgan(num, next = 0):
     if num == 3:
         play_song(300, next)
 
-# DONE
+# play 11-19
 def play_eleven_to_nineteen(num):
     if num == 1:
         play_song(11)
@@ -67,12 +67,13 @@ def play_eleven_to_nineteen(num):
     if num == 9:
         play_song(19)
 
+#leave gap between them.
 def music_length(path):
     song = MP3(path)
     songl = song.info.length
     return songl
 
-#DONE. play first digit.
+#play first digit.
 def yekan(num, next = 0):
     if num == 1:
         play_song(1, next)
@@ -93,7 +94,7 @@ def yekan(num, next = 0):
     if num == 9:
         play_song(9, next)
 
-#DONE.
+#play second digit
 def dahgan(num,yekan):
     is_eleven = False
     if num == 1 and yekan != 0:
@@ -140,7 +141,7 @@ def split_num(number):
     if leng > 2:
         sad = int(number[2])
     if sad:
-        if yek or dah:
+        if yek or dah or mmz:
             play_sadgan(sad,1)
         else:
             play_sadgan(sad,0)
@@ -150,8 +151,11 @@ def split_num(number):
         yekan(yek)
     if mmz and mmz != '0':
         mmz = int(mmz)
-        yekan(mmz)
-        play_mil()
+        if mmz == 5:
+            play_song('nim')
+        else:
+            yekan(mmz)
+            play_mil()
  
 i = 0
 mixer.init()
