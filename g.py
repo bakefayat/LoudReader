@@ -34,7 +34,6 @@ def play_dah(num):
         play_song(90)
 
 
-#play hunderds. 1-2-3.
 # TODO: humanize it.
 def play_sadgan(num):
     if num == 1:
@@ -71,7 +70,7 @@ def music_length(path):
     songl = song.info.length
     return songl
 
-#DONE.play digit
+# TODO: should be humanized.
 def play_digit(num):
     if num == 1:
         play_song(1)
