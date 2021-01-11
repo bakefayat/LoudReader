@@ -4,34 +4,37 @@ from mutagen.mp3 import MP3
 from playsound import playsound as play
 import pandas as pd
 
-def play_song(song):
+def play_song(song, next = 0):
     path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
-    if (type(song) == int):
+    if (type(song) == int) and next == 1:
+        fpath = path + str(song) + 'o' + '.mp3'
+    elif (type(song) == int) and next == 0:
         fpath = path + str(song) + '.mp3'
     else:
         fpath = path + song + '.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
+    print(fpath, next)
 
-def play_dah(num):
+def play_dah(num,next = 0):
     if num == 1:
-        play_song(10)
+        play_song(10, next)
     if num == 2:
-        play_song(20)
+        play_song(20, next)
     if num == 3:
-        play_song(30)
+        play_song(30, next)
     if num == 4:
-        play_song(40)
+        play_song(40, next)
     if num == 5:
-        play_song(50)
+        play_song(50, next)
     if num == 6:
-        play_song(60)
+        play_song(60, next)
     if num == 7:
-        play_song(70)
+        play_song(70, next)
     if num == 8:
-        play_song(80)
+        play_song(80, next)
     if num == 9:
-        play_song(90)
+        play_song(90, next)
 
 
 # TODO: humanize it.
@@ -43,7 +46,7 @@ def play_sadgan(num):
     if num == 3:
         play_song(300)
 
-#DONE. to play 11-19.
+# DONE
 def play_eleven_to_nineteen(num):
     if num == 1:
         play_song(11)
@@ -64,14 +67,13 @@ def play_eleven_to_nineteen(num):
     if num == 9:
         play_song(19)
 
-#Done. to hold program as long as sound length.
 def music_length(path):
     song = MP3(path)
     songl = song.info.length
     return songl
 
-# TODO: should be humanized.
-def play_digit(num):
+#DONE. play first digit.
+def yekan(num):
     if num == 1:
         play_song(1)
     if num == 2:
@@ -91,10 +93,6 @@ def play_digit(num):
     if num == 9:
         play_song(9)
 
-#DONE. play first digit.
-def yekan(num):
-    play_digit(num)
-
 #DONE.
 def dahgan(num,yekan):
     is_eleven = False
@@ -102,7 +100,10 @@ def dahgan(num,yekan):
         play_eleven_to_nineteen(yekan)
         is_eleven = True
     else:
-        play_dah(num)
+        if yekan != 0:
+            play_dah(num, 1)
+        else:
+            play_dah(num, 0)
     return is_eleven
 
 #DONE. play just 'dar' not anything else.
