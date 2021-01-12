@@ -15,7 +15,6 @@ def play_song(song, next = 0):
         fpath = path + song + '.mp3'
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
-
 # play 10-20-30-...
 def play_dah(num,next = 0):
     if num == 1:
@@ -95,7 +94,7 @@ def yekan(num, next = 0):
         play_song(9, next)
 
 #play second digit
-def dahgan(num,yekan):
+def dahgan(num, yekan, mmz = 0, next= 0):
     is_eleven = False
     if num == 1 and yekan != 0:
         play_eleven_to_nineteen(yekan)
@@ -120,6 +119,7 @@ def play_mil():
         play_song('mil')
 
 def split_num(number):
+    number2 = number
     mmz_index = None
     mmz = 0
     sad = 0
@@ -141,22 +141,30 @@ def split_num(number):
     if leng > 2:
         sad = int(number[2])
     if sad:
-        if yek or dah or mmz:
+        if yek or dah:
             play_sadgan(sad,1)
         else:
             play_sadgan(sad,0)
     if dah:
-        is_wierd = dahgan(dah,yek)
+        if yek or mmz:
+            is_wierd = dahgan(dah, yek, mmz, 1)
+        else:
+            is_wierd = dahgan(dah,yek, mmz, 0)
     if yek and not(is_wierd):
-        yekan(yek)
+        if int(mmz):
+            yekan(yek,1)
+        else:
+            yekan(yek,0)
     if mmz and mmz != '0':
         mmz = int(mmz)
+        if not(yek) and not(dah):
+            play_song('santo')
         if mmz == 5:
             play_song('nim')
         else:
             yekan(mmz)
-            play_mil()
- 
+        if not(yek) and not(dah):
+            play_song('mil')
 i = 0
 mixer.init()
 mixer.music.set_volume(1)
