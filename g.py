@@ -1,18 +1,25 @@
 import time
 from pygame import mixer
 from mutagen.mp3 import MP3
+import os
 from playsound import playsound as play
 import pandas as pd
 
 #just play sound.
 def play_song(song, next = 0):
-    path = 'C:/Users/RDaneshjoo/Downloads/programming/py/goya/voice/' 
+    path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice'
     if (type(song) == int) and next == 1:
-        fpath = path + str(song) + 'o' + '.mp3'
+        second_part_of_path = str(song) + 'o' + '.mp3'
+        fpath = os.path.join(path, second_part_of_path)
+        print('second', fpath)
     elif (type(song) == int) and next == 0:
-        fpath = path + str(song) + '.mp3'
+        second_part_of_path = str(song) + '.mp3'
+        fpath = os.path.join(path, second_part_of_path)
+        print('second', fpath)
     else:
-        fpath = path + song + '.mp3'
+        second_part_of_path = song + '.mp3'
+        fpath = os.path.join(path, second_part_of_path)
+        print('second', fpath)
     mixer.Channel(i).play(mixer.Sound(fpath))
     time.sleep(music_length(fpath))
 # play 10-20-30-...
