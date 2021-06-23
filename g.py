@@ -1,27 +1,34 @@
 import time
 from pygame import mixer
-from mutagen.mp3 import MP3
+# from mutagen.mp3 import MP3
+import soundfile as sf
 import os
 from playsound import playsound as play
 import pandas as pd
 
 #just play sound.
 def play_song(song, next = 0):
-    path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice'
+    path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice\wav'
     if (type(song) == int) and next == 1:
-        second_part_of_path = str(song) + 'o' + '.mp3'
+        second_part_of_path = str(song) + 'o' + '.wav'
         fpath = os.path.join(path, second_part_of_path)
-        print('second', fpath)
+        sleep_time = music_length(fpath)
+        print(fpath)
+        sleep_time += 0.5
     elif (type(song) == int) and next == 0:
-        second_part_of_path = str(song) + '.mp3'
+        second_part_of_path = str(song) + '.wav'
         fpath = os.path.join(path, second_part_of_path)
-        print('second', fpath)
+        sleep_time = music_length(fpath)
+        print(fpath)
+        sleep_time += 0.5
     else:
-        second_part_of_path = song + '.mp3'
+        second_part_of_path = song + '.wav'
         fpath = os.path.join(path, second_part_of_path)
-        print('second', fpath)
+        sleep_time = music_length(fpath)
+        print(fpath)
+        sleep_time += 0.5
     mixer.Channel(i).play(mixer.Sound(fpath))
-    time.sleep(music_length(fpath))
+    time.sleep(sleep_time)
 # play 10-20-30-...
 def play_dah(num,next = 0):
     if num == 1:
@@ -75,9 +82,11 @@ def play_eleven_to_nineteen(num):
 
 #leave gap between them.
 def music_length(path):
-    song = MP3(path)
-    songl = song.info.length
-    return songl
+    # song = MP3(path)
+    song = sf.SoundFile(path)
+    song_length = len(path) / song.samplerate
+    # songl = song.info.length
+    return song_length
 
 #play first digit.
 def yekan(num, next = 0):
@@ -119,12 +128,12 @@ def play_dar():
 
 #play just 'adad' not anything else.
 def play_adad():
-        play_song('adad')
-
+        #play_song('adad')
+        pass
 #play milimeter after length or width.
 def play_mil():
-        play_song('mil')
-
+        # play_song('mil')
+        pass
 def split_num(number):
     number2 = number
     mmz_index = None
