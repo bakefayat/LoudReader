@@ -17,75 +17,20 @@ def play_song(song, next = 0):
     song_array.append(fpath)
 # play 10-20-30-...
 def play_dah(num,next = 0):
-    if num == 1:
-        play_song(10, next)
-    if num == 2:
-        play_song(20, next)
-    if num == 3:
-        play_song(30, next)
-    if num == 4:
-        play_song(40, next)
-    if num == 5:
-        play_song(50, next)
-    if num == 6:
-        play_song(60, next)
-    if num == 7:
-        play_song(70, next)
-    if num == 8:
-        play_song(80, next)
-    if num == 9:
-        play_song(90, next)
+    play_song(num*10, next)
 
 #play 100-200-300
 def play_sadgan(num, next = 0):
-    if num == 1:
-        play_song(100, next)
-    if num == 2:
-        play_song(200, next)
-    if num == 3:
-        play_song(300, next)
+    play_song(num*100, next)
 
 # play 11-19
 def play_eleven_to_nineteen(num):
-    if num == 1:
-        play_song(11)
-    if num == 2:
-        play_song(12)
-    if num == 3:
-        play_song(13)
-    if num == 4:
-        play_song(14)
-    if num == 5:
-        play_song(15)
-    if num == 6:
-        play_song(16)
-    if num == 7:
-        play_song(17)
-    if num == 8:
-        play_song(18)
-    if num == 9:
-        play_song(19)
+    num = '1' + str(num)
+    play_song(num, next)
 
 #play first digit.
 def yekan(num, next = 0):
-    if num == 1:
-        play_song(1, next)
-    if num == 2:
-        play_song(2, next)
-    if num == 3:
-        play_song(3, next)
-    if num == 4:
-        play_song(4, next)
-    if num == 5:
-        play_song(5, next)
-    if num == 6:
-        play_song(6, next)
-    if num == 7:
-        play_song(7, next)
-    if num == 8:
-        play_song(8, next)
-    if num == 9:
-        play_song(9, next)
+    play_song(num, next)
 
 #play second digit
 def dahgan(num, yekan, mmz = 0, next= 0):
