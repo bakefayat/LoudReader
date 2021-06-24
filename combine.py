@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from pydub import AudioSegment
 
-#just play sound.
+# append array of voices.
 def play_song(song, next = 0):
     path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice\wav'
     
@@ -15,11 +15,12 @@ def play_song(song, next = 0):
 
     fpath = os.path.join(path, second_part_of_path)
     song_array.append(fpath)
+
 # play 10-20-30-...
 def play_dah(num,next = 0):
     play_song(num*10, next)
 
-#play 100-200-300
+# play 100-200-300
 def play_sadgan(num, next = 0):
     play_song(num*100, next)
 
@@ -28,11 +29,11 @@ def play_eleven_to_nineteen(num):
     num = '1' + str(num)
     play_song(num, next)
 
-#play first digit.
+# play first digit.
 def yekan(num, next = 0):
     play_song(num, next)
 
-#play second digit
+# play second digit
 def dahgan(num, yekan, mmz = 0, next= 0):
     is_eleven = False
     if num == 1 and yekan != 0:
@@ -45,18 +46,20 @@ def dahgan(num, yekan, mmz = 0, next= 0):
             play_dah(num, 0)
     return is_eleven
 
-#DONE. play just 'dar' not anything else.
+# play just 'dar' not anything else.
 def play_dar():
         play_song('dar')
 
-#play just 'adad' not anything else.
+# play just 'adad' not anything else.
 def play_adad():
         play_song('adad')
         pass
-#play milimeter after length or width.
+# play milimeter after length or width.
 def play_mil():
         # play_song('mil')
         pass
+
+# split full number to pieces.
 def split_num(number):
     mmz_index = None
     mmz = 0
@@ -103,7 +106,7 @@ def split_num(number):
             yekan(mmz)
         if not(yek) and not(dah):
             play_song('mil')
-i = 0
+
 pan = pd.read_excel(r'C:\Users\RDaneshjoo\Desktop\master.xlsx')
 df = pd.DataFrame(pan, columns= [ 'طول','عرض','تعداد'])
 width = df['طول'].tolist()
