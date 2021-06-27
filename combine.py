@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 from pydub import AudioSegment
-
 # append array of voices.
 def play_song(song, next = 0):
     path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice\wav'
