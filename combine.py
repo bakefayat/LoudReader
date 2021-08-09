@@ -3,7 +3,7 @@ import pandas as pd
 from pydub import AudioSegment
 # append array of voices.
 def play_song(song, next = 0):
-    path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice\wav'
+    path = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice'
     
     if (type(song) == int) and next == 1:
         second_part_of_path = str(song) + 'o' + '.wav'
@@ -108,7 +108,7 @@ width = df['طول'].tolist()
 length = df['عرض'].tolist()
 many = df['تعداد'].tolist()
 song_array = []
-file1 = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice\wav\blank.wav'
+file1 = r'C:\Users\RDaneshjoo\Downloads\programming\other projects\goya\voice\blank.wav'
 sound1 = AudioSegment.from_wav(file1)
 combined = sound1
 for k in range(0,len(width)):
