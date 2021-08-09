@@ -102,7 +102,7 @@ def split_num(number):
         if not(yek) and not(dah):
             play_song('mil')
 
-pan = pd.read_excel(r'C:\Users\RDaneshjoo\Desktop\master.xlsx')
+pan = pd.read_excel(r'master.xlsx')
 df = pd.DataFrame(pan, columns= [ 'طول','عرض','تعداد'])
 width = df['طول'].tolist()
 length = df['عرض'].tolist()
