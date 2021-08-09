@@ -53,10 +53,6 @@ def play_dar():
 def play_adad():
         play_song('adad')
         pass
-# play milimeter after length or width.
-def play_mil():
-        # play_song('mil')
-        pass
 
 # split full number to pieces.
 def split_num(number):
